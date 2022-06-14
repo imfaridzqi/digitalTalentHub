@@ -1,0 +1,20 @@
+<% layout('layouts/boilerplate') %> 
+    <h1 class="text-3xl font-bold underline">Employer</h1>
+        <div class="row">
+            <% for (let employer of employers) { %>
+            <div class="col-lg-4 col-sm-12">
+                <div class="card mb-3 border-top border-info border-5 rounded-0">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= employer.name %></h5>
+                      <p class="card-text"><%= employer.address %></p>
+                      <p class="card-text"><%= employer.industry %></p>
+                      <a class="btn btn-info" href="/employer/<%= employer._id %>">Detail</a>
+                    </div>
+                  </div>
+            </div>
+            <% } %> 
+        </div>
+
+       
+
+     

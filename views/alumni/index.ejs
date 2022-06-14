@@ -1,0 +1,23 @@
+<% layout('layouts/boilerplate') %> 
+    <h3>Daftar Alumni</h3>
+        <div class="row">
+            <% for (let alumni of alumnis) { %>
+            <div class="col-lg-4 col-sm-12">
+                <div class="card mb-3 border-top border-info border-5 rounded-0">
+                  <% for (let img of alumni.image) {%>
+                    <img src="<%= img.url %> " alt="profile-img" class="rounded m-3" width="100px">
+                      <% } %> 
+                    <div class="card-body">
+                      <h5 class="card-title"><%= alumni.name %></h5>
+                      <p class="card-text"><%= alumni.email %></p>
+                       
+                      <a class="btn btn-info" href="/alumni/<%= alumni._id %>">Detail</a>
+                    </div>
+                  </div>
+            </div>
+            <% } %> 
+        </div>
+
+       
+
+     

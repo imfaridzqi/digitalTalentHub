@@ -1,0 +1,54 @@
+<% layout('layouts/boilerplate') %> 
+<div class="row">
+    <div class="col-6 offset-3">
+        <h2>Edit Profile Perusahaan</h2>
+        <form action="/employer/<%= employer._id %>?_method=PUT" enctype="multipart/form-data" method="post">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="name" name="employer[name]" value="<%= employer.name %>" class="form-control"/>
+                  <label class="form-label" for="name">Nama Depan</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-outline mb-4">
+              <div class="form-outline">
+                <input type="file" name="image" class="form=control"/>
+              </div>
+            </div>
+          
+            <!-- Text input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="address" name="employer[address]" class="form-control" value="<%= employer.address %>" />
+              <label class="form-label" for="address">Alamat</label>
+            </div>
+          
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="email" name="employer[email]" value="<%= employer.email %>" class="form-control" disabled/>
+              <label class="form-label" for="email">Alamat Email</label>
+            </div>
+          
+            <!-- Number input -->
+            <div class="form-outline mb-4">
+              <input type="number" id="phone" name="employer[phone]" class="form-control" value="<%= employer.phone %>" />
+              <label class="form-label" for="phone">Nomor Telepon</label>
+            </div>
+          
+            <!-- Message input -->
+            <div class="form-outline mb-4">
+              <textarea class="form-control" id="description" name="employer[description]" rows="4"><%= employer.description %></textarea>
+              <label class="form-label" for="description">Sekilas Tentang <%= employer.name %></label>
+            </div>
+                   
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Update Profile</button>
+          </form>
+    </div>
+</div>
+
+       
+
+     

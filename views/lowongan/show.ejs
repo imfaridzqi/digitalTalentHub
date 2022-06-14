@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate') %> 
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><%= lowongan.title %></h5>
+                  <p class="card-text"><a href="/employer/<%= lowongan.employer._id %>"><%= lowongan.employer.name %></a></p>
+                  <p class="card-text"><%= lowongan.description %></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><%= lowongan.location %></li>
+                  <li class="list-group-item"><%= lowongan.salary %></li>
+                </ul>
+                <% if (currentUser && lowongan.author.equals(currentUser._id)) { %> 
+                <div class="card-body">
+                    <a  class="btn btn-info" href="/lowongan/<%= lowongan._id %>/edit">Edit</a>
+                    <form class="d-inline" action="/lowongan/<%= lowongan._id %>?_method=DELETE" method="post">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+                <% } %>
+                <% if (currentUser && currentUser.role === "alumni") {%> 
+                <div class="card-body">
+                    <a  class="btn btn-info" href="#">Lamar</a>
+                </div> 
+                <% } %> 
+                <div class="card-footer">
+                    <small class="text-muted">Posted 3 days ago</small>
+                </div>
+              </div>
+        </div>
+    </div>

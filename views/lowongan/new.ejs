@@ -1,0 +1,33 @@
+    <% layout('layouts/boilerplate') %>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h1>Post Lowongan Baru</h1>
+            <form action="/employer/<%= id %>/lowongan" method="post" class="needs-validation" novalidate>
+            <div class="form-outline mb-4">
+                <input type="text" name="lowongan[title]" class="form-control" id="title" required>
+                <label for="title" class="form-label">Title</label>
+                <div class="invalid-feedback">Kolom ini harus diisi</div>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="text" name="lowongan[location]" class="form-control" id="location" required>
+                <label for="location" class="form-label">Location</label>
+                <div class="invalid-feedback">Kolom ini harus diisi</div>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="text" name="lowongan[salary]" class="form-control" id="salary" required>
+                <label for="salary" class="form-label">Salary</label>
+                <div class="invalid-feedback">Kolom ini harus diisi</div>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="text" name="lowongan[description]" class="form-control" id="description" required>
+                <label for="description" class="form-label">Description</label>
+                <div class="invalid-feedback">Kolom ini harus diisi</div>
+            </div>
+            <input type="hidden" name="lowongan[author]" class="form-control" id="author" value="<%= currentUser._id %>" required>
+            <button type="submit" class="btn btn-primary block">Buat Lowongan</button>
+        </form>
+        <a href="/lowongan/">Semua Lowongan</a>
+    
+        </div>
+    </div>
+        

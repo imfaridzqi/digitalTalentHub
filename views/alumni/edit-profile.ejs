@@ -1,0 +1,61 @@
+<% layout('layouts/boilerplate') %> 
+<div class="row">
+    <div class="col-6 offset-3">
+        <h2>Edit Profile</h2>
+        <form action="/alumni/<%= alumni._id %>?_method=PUT" method="post" enctype="multipart/form-data" novalidate>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="name" name="alumni[name]" value="<%= alumni.name %>" class="form-control" required/>
+                  <label class="form-label" for="name">Nama Depan</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="lastName" name="alumni[lastName]" value="<%= alumni.lastName %>" class="form-control" />
+                  <label class="form-label" for="lastName">Nama Belakang</label>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-outline mb-4">
+              <div class="form-outline">
+                <input type="file" name="image" class="form=control"/>
+              </div>
+            </div>
+          
+            <!-- Text input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="address" name="alumni[address]" class="form-control" value="<%= alumni.address %>" />
+              <label class="form-label" for="address">Alamat</label>
+            </div>
+          
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="email" name="alumni[email]" value="<%= alumni.email %>" class="form-control" disabled/>
+              <label class="form-label" for="email">Email</label>
+            </div>
+          
+            <!-- Number input -->
+            <div class="form-outline mb-4">
+              <input type="number" id="phone" name="alumni[phone]" class="form-control" value="<%= alumni.phone %>" />
+              <label class="form-label" for="phone">Nomor Handphone</label>
+            </div>
+          
+            <!-- Message input -->
+            <div class="form-outline mb-4">
+              <textarea class="form-control" id="description" name="alumni[description]" rows="4"><%= alumni.description %></textarea>
+              <label class="form-label" for="description">Sekilas Tentang Anda</label>
+            </div>
+                   
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Update Profile</button>
+          </form>
+    </div>
+</div>
+
+       
+
+     

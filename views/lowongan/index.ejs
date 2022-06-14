@@ -1,0 +1,23 @@
+<% layout('layouts/boilerplate') %> 
+    <h2>Lowongan Kerja</h2>
+    <!-- <a href="/lowongan/new">Post Lowongan Baru</a> -->
+        <div class="row">
+            <% for (let lowongan of lowongans) { %>
+            <div class="col-lg-4 col-sm-12">
+                <div class="card mb-3 border-top border-info border-5 rounded-0">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= lowongan.title %></h5>
+                      <p class="card-text"><a href="/employer/<%= lowongan.employer._id %>"><%= lowongan.employer.name %></a></p>
+                      <p class="card-text"><%= lowongan.location %></p>
+                      <p class="card-text"><%= lowongan.salary %></p>
+                      <p class="card-text"><%= lowongan.description %></p>
+                      <a class="btn btn-info" href="/lowongan/<%= lowongan._id %>">Detail</a>
+                    </div>
+                  </div>
+            </div>
+            <% } %> 
+        </div>
+
+       
+
+     

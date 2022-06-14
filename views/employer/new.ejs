@@ -1,0 +1,42 @@
+<% layout('layouts/boilerplate') %>
+<div class="row">
+  <div class="col-6 offset-3">
+    <h1>Daftar sebagai Employer</h1>
+    <form action="/employer/" method="post" class="needs-validation" novalidate>
+      <div class="form-outline mb-4">
+        <input
+          type="text"
+          name="employer[name]"
+          class="form-control"
+          id="name"
+          required
+        />
+        <label for="name" class="form-label">Nama Perusahaan</label>
+        <div class="invalid-feedback">Kolom ini harus diisi</div>
+      </div>
+      <div class="form-outline mb-4">
+        <input
+          type="text"
+          name="employer[address]"
+          class="form-control"
+          id="address"
+          required
+        />
+        <label for="address" class="form-label">Alamat</label>
+        <div class="invalid-feedback">Kolom ini harus diisi</div>
+      </div>
+      <div class="form-outline mb-4">
+        <input
+          type="text"
+          name="employer[industry]"
+          class="form-control"
+          id="industry"
+          required
+        />
+        <label for="industry" class="form-label">Industri</label>
+        <div class="invalid-feedback">Kolom ini harus diisi</div>
+      </div>
+      <button type="submit" class="btn btn-primary block">Daftar</button>
+    </form>
+  </div>
+</div>
