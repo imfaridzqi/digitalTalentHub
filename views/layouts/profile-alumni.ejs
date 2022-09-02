@@ -204,20 +204,20 @@ const cv = linkCV.replace(regex, "uc");
                       <!-- Tanggal Lahir -->
                       <div class="form-group">
                         <label>Tanggal Lahir</label>
-                          <div class="input-group date" id="tglLahir" data-target-input="nearest">
-                              <input type="text" class="form-control datetimepicker-input" data-target="#tglLahir" value="<%= alumni.tanggalLahir %>">
-                              <div class="input-group-append" data-target="#tglLahir" data-toggle="datetimepicker">
+                          <div class="input-group date" id="tanggalLahir" data-target-input="nearest">
+                              <input type="text" class="form-control datetimepicker-input" data-target="#tanggalLahir" value="<%= alumni.tanggalLahir %>" name="alumni[tanggalLahir]">
+                              <div class="input-group-append" data-target="#tanggalLahir" data-toggle="datetimepicker">
                                   <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                               </div>
                           </div>
                       </div>
-    
+                      
                       <!-- Nomor Handphone -->
                       <div class="form-group">
                         <label for="phone">Nomor Handphone</label>
                         <input type="text" name="alumni[phone]" class="form-control" id="phone" placeholder="Masukkan Nomor Handphone" value="<%= alumni.phone %>">
                       </div>
-    
+                      
                       <!-- Email -->
                       <div class="form-group">
                         <label for="email">Email</label>
