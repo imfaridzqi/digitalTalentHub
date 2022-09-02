@@ -1,0 +1,287 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary float-sm-right" data-toggle="modal" data-target="#exampleModalScrollable">
+    Tambah Data Alumni
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">Tambah Data Alumni</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/alumni" method="POST">
+                    <div class="card-body">
+                        <!-- Nama -->
+                        <div class="form-group">
+                            <label for="fName">Nama Lengkap</label>
+                            <input type="text" name="alumni[name]" class="form-control" id="fName"
+                                placeholder="Masukkan Nama Lengkap" required>
+                        </div>
+
+                        <!-- Gender -->
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" class="form-control" name="alumni[gender]">
+                                <option value="">Pilih Gender</option>
+                                <option value="Pria">Pria</option>
+                                <option value="Wanita">Wanita</option>
+                            </select>
+                        </div>
+
+                        <!-- Tempat Lahir -->
+                        <div class="form-group">
+                            <label for="tempatLahir">Tempat Lahir</label>
+                            <input type="text" name="alumni[tempatLahir]" class="form-control" id="tempatLahir"
+                                placeholder="Masukkan Tempat Lahir">
+                            </select>
+                        </div>
+
+                        <!-- Tanggal Lahir -->
+                        <div class="form-group">
+                            <label>Tanggal Lahir</label>
+                            <div class="input-group date" id="tanggalLahir" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#tanggalLahir" name="alumni[tanggalLahir]">
+                                <div class="input-group-append" data-target="#tanggalLahir" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nomor Handphone -->
+                        <div class="form-group">
+                            <label for="phone">Nomor Handphone</label>
+                            <input type="text" name="alumni[phone]" class="form-control" id="phone"
+                                placeholder="Masukkan Nomor Handphone">
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="alumni[email]" class="form-control" id="email"
+                                placeholder="Masukkan Email">
+                        </div>
+
+                        <!-- Alamat -->
+                        <div class="form-group">
+                            <label for="alamat">Alamat</label>
+                            <input type="text" name="alumni[alamat]" class="form-control" id="alamat"
+                                placeholder="Masukkan Alamat">
+                        </div>
+
+                        <!-- Alamat Pengiriman -->
+                        <div class="form-group">
+                            <label for="alamatPengiriman">Alamat Pengiriman</label>
+                            <input type="text" name="alumni[alamatPengiriman]" class="form-control"
+                                id="alamatPengiriman" placeholder="Masukkan Alamat Pengiriman">
+                        </div>
+
+                        <!-- Perusahaan -->
+                        <div class="form-group">
+                            <label for="perusahaan">Perusahaan</label>
+                            <input type="text" name="alumni[perusahaan]" class="form-control" id="perusahaan"
+                                placeholder="Masukkan Nama Perusahaan">
+                        </div>
+
+                        <!-- Job Title -->
+                        <div class="form-group">
+                            <label for="jobTitle">Job Title</label>
+                            <input type="text" name="alumni[jobTitle]" class="form-control" id="jobTitle"
+                                placeholder="Masukkan Job Title">
+                        </div>
+
+                        <!-- Tingkat Pendidikan -->
+                        <div class="form-group">
+                            <label for="pendidikanTerakhir">Tingkat Pendidikan</label>
+                            <select id="gender" class="form-control" name="alumni[pendidikanTerakhir]">
+                                <option value="">Pilih Tingat Pendidikan</option>
+                                <option value="SMA/SMK">SMA/SMK</option>
+                                <option value="D1">D1</option>
+                                <option value="D3">D3</option>
+                                <option value="D4">D4</option>
+                                <option value="S1">S1</option>
+                                <option value="S2">S2</option>
+                                <option value="S3">S3</option>
+                            </select>
+                        </div>
+
+                        <!-- Jurusan -->
+                        <div class="form-group">
+                            <label for="jurusan">Jurusan</label>
+                            <input type="text" name="alumni[jurusan]" class="form-control" id="jurusan"
+                                placeholder="Masukkan Jurusan">
+                        </div>
+
+                        <!-- Universitas -->
+                        <div class="form-group">
+                            <label for="universitas">Universitas</label>
+                            <input type="text" name="alumni[universitas]" class="form-control" id="universitas"
+                                placeholder="Masukkan Nama Universitas">
+                        </div>
+
+                        <!-- Program -->
+                        <div class="form-group">
+                            <label for="program">Program</label>
+                            <select id="program" class="form-control" name="alumni[program]">
+                                <option value="">Pilih Program</option>
+                                <% for (let program of programs) {%>
+                                    <option value="<%= program.nama %>">
+                                        <%= program.nama %>
+                                    </option>
+                                    <% } %>
+                            </select>
+                        </div>
+
+                        <!-- Batch Program -->
+                        <div class="form-group">
+                            <label for="batch">Batch Program</label>
+                            <select id="batch" class="form-control" name="alumni[batch]">
+                                <option value="">Pilih Batch Program</option>
+                                <% for (let i=1; i <=100; i++) {%>
+                                    <option value="<%= i %>">
+                                        <%= i %>
+                                    </option>
+                                    <% } %>
+                            </select>
+                        </div>
+
+                        <!-- Tanggal Gabung -->
+                        <div class="form-group">
+                            <label>Tanggal Gabung</label>
+                            <div class="input-group date" id="tanggalGabung" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#tanggalGabung" name="alumni[tanggalGabung]">
+                                <div class="input-group-append" data-target="#tanggalGabung" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tanggal Program -->
+                        <div class="form-group">
+                            <label>Tanggal Program</label>
+                            <div class="input-group date" id="tanggalProgram" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#tanggalProgram" name="alumni[tanggalProgram]">
+                                <div class="input-group-append" data-target="#tanggalProgram" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Link Foto Formal -->
+                        <div class="form-group">
+                            <label for="fotoFormal">Link Foto Formal</label>
+                            <input type="text" name="alumni[fotoFormal]" class="form-control" id="fotoFormal"
+                                placeholder="Masukkan Link Foto Formal">
+                        </div>
+
+                        <!-- Link Foto Non Formal -->
+                        <div class="form-group">
+                            <label for="fotoNonFormal">Link Foto Non Formal</label>
+                            <input type="text" name="alumni[fotoNonFormal]" class="form-control" id="fotoNonFormal"
+                                placeholder="Masukkan Link Foto Non Formal">
+                        </div>
+
+                        <!-- Link CV -->
+                        <div class="form-group">
+                            <label for="cv">Link CV</label>
+                            <input type="text" name="alumni[cv]" class="form-control" id="cv"
+                                placeholder="Masukkan Link CV">
+                        </div>
+
+                        <!-- Instagram -->
+                        <div class="form-group">
+                            <label for="instagram">Instagram</label>
+                            <input type="text" name="alumni[instagram]" class="form-control" id="instagram"
+                                placeholder="Masukkan Link Profile Instagram">
+                        </div>
+
+                        <!-- LinkedIn -->
+                        <div class="form-group">
+                            <label for="linkedin">Linked In</label>
+                            <input type="text" name="alumni[linkedin]" class="form-control" id="linkedin"
+                                placeholder="Masukkan Link Profile Linked In">
+                        </div>
+
+                        <!-- Tanggal Ujian -->
+                        <div class="form-group">
+                            <label>Tanggal Ujian</label>
+                            <div class="input-group date" id="tanggalUjian" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#tanggalUjian" name="alumni[tanggalUjian]">
+                                <div class="input-group-append" data-target="#tanggalUjian" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Alamat Pengiriman Sertifikat -->
+                        <div class="form-group">
+                            <label for="alamatPengirimanSertifikat">Alamat Pengiriman Sertifikat</label>
+                            <input type="text" name="alumni[alamatPengirimanSertifikat]" class="form-control"
+                                id="alamatPengirimanSertifikat" placeholder="Masukkan Alamat Pengiriman Sertifikat">
+                        </div>
+
+                        <!-- Nomor Sertifikat DMS -->
+                        <div class="form-group">
+                            <label for="noSertifikatDMS">Nomor Sertifikat DMS</label>
+                            <input type="text" name="alumni[noSertifikatDMS]" class="form-control" id="noSertifikatDMS"
+                                placeholder="Masukkan Nomor Sertifikat DMS">
+                        </div>
+
+                        <!-- Nomor Sertifikat BNSP -->
+                        <div class="form-group">
+                            <label for="noSertifikatBNSP">Nomor Sertifikat BNSP</label>
+                            <input type="text" name="alumni[noSertifikatBNSP]" class="form-control"
+                                id="noSertifikatBNSP" placeholder="Masukkan Nomor Sertifikat BNSP">
+                        </div>
+
+                        <!-- Tanggal Terbit BNSP -->
+                        <div class="form-group">
+                            <label>Tanggal Terbit BNSP</label>
+                            <div class="input-group date" id="tglTerbitBNSP" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#tglTerbitBNSP" name="alumni[tglTerbitBNSP]">
+                                <div class="input-group-append" data-target="#tglTerbitBNSP" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tanggal Akhir BNSP -->
+                        <div class="form-group">
+                            <label>Tanggal Akhir BNSP</label>
+                            <div class="input-group date" id="tglAkhirBNSP" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#tglAkhirBNSP" name="alumni[tglAkhirBNSP]">
+                                <div class="input-group-append" data-target="#tglAkhirBNSP" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimoni -->
+                        <div class="form-group">
+                            <label for="testimoni">Testimoni</label>
+                            <input type="text" name="alumni[testimoni]" class="form-control"
+                                id="testimoni" placeholder="Masukkan Link Testimoni">
+                        </div>
+
+                        <!-- Banner Testimoni -->
+                        <div class="form-group">
+                            <label for="bannerTestimoni">Banner Testimoni</label>
+                            <input type="text" name="alumni[bannerTestimoni]" class="form-control"
+                                id="bannerTestimoni" placeholder="Masukkan Link Banner Testimoni">
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Kirim</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

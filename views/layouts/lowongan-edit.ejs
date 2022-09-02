@@ -1,0 +1,96 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Edit Lowongan</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Edit Lowongan</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <form action="/lowongan/<%= lowongan._id %>?_method=PUT" method="post">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card card-primary">
+          
+          <div class="card-body border-top border-primary">
+            <div class="form-group">
+              <label for="judul">Nama Pekerjaan</label>
+              <input type="text" id="judul" class="form-control" name="lowongan[judul]" placeholder="Front End Developer" value="<%= lowongan.judul %>">
+            </div>
+            <div class="form-group">
+              <label for="perusahaan">Perusahaan</label>
+              <input type="text" id="perusahaan" class="form-control" name="lowongan[perusahaan]" placeholder="PT. WGS" value="<%= lowongan.perusahaan %>">
+            </div>
+            <div class="form-group">
+              <label for="lokasi">Lokasi</label>
+              <input type="text" id="lokasi" class="form-control" name="lowongan[lokasi]" placeholder="Bandung" value="<%= lowongan.lokasi %>">
+            </div>
+            <div class="form-group">
+              <label for="inputDescription">Deskripsi Pekerjaan</label>
+              <textarea id="inputDescription" class="form-control" rows="4" name="lowongan[jobdesk]"><%= lowongan.jobdesk %></textarea>
+            </div>
+            <div class="form-group">
+              <label for="inputDescription">Skill Wajib</label>
+              <textarea id="inputDescription" class="form-control" rows="4" name="lowongan[skill]"><%= lowongan.skill %></textarea>
+            </div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <div class="col-md-6">
+        <div class="card card-secondary">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="salary">Salary</label>
+              <input type="number" id="salary" class="form-control" name="lowongan[salary]" step="100000" placeholder="5000000" value="<%= lowongan.salary %>">
+            </div>
+            <div class="form-group">
+              <label for="experience">Pengalaman</label>
+              <select id="experience" class="form-control custom-select" name="lowongan[experience]">
+                
+                <option disabled>Pilih Pengalaman</option>
+                <option value="<1" <%= lowongan.experience === "<1" ? "selected" : "" %>>Kurang dari 1 tahun</option>
+                <option value="1-3" <%= lowongan.experience === "1-3" ? "selected" : "" %>>1 - 3 Tahun</option>
+                <option value="3-5" <%= lowongan.experience === "3-5" ? "selected" : "" %>>3 - 5 Tahun</option>
+                <option value="5-10" <%= lowongan.experience === "5-10" ? "selected" : "" %>>5 - 10 Tahun</option>
+                <option value=">10" <%= lowongan.experience === ">10" ? "selected" : "" %>>Lebih dari 10 Tahun</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="inputStatus">Status</label>
+              <select id="inputStatus" class="form-control custom-select" name="lowongan[status]">
+                <option disabled>Pilih Status</option>
+                <option value="aktif">Aktif</option>
+                <option value="tidak aktif">Tidak Aktif</option>
+              </select>
+            </div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <a href="/lowongan/<%= lowongan._id %>" class="btn btn-secondary">Cancel</a>
+        <input type="submit" value="Simpan" class="btn btn-success float-right">
+      </div>
+    </div>
+    </form>
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

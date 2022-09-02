@@ -1,0 +1,154 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <%- include("../layouts/flash.ejs") %> 
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Data Alumni</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Data Alumni</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+  
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <%- include("./new-alumni-modal.ejs") %> 
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>Nama Lengkap</th>
+                    <th>Gender</th>
+                    <th>Tempat Lahir</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Nomor Handphone</th>
+                    <th>Email</th>
+                    <th>Alamat</th>
+                    <th>Alamat Pengiriman</th>
+                    <th>Perusahaan</th>
+                    <th>Job Title</th>
+                    <th>Tingkat Pendidikan Terakhir</th>
+                    <th>Jurusan Pendidikan</th>
+                    <th>Universitas</th>
+                    <th>Program</th>
+                    <th>Batch Program</th>
+                    <th>Tanggal Gabung</th>
+                    <th>Tanggal Program</th>
+                    <th>Foto Formal</th>
+                    <th>Foto Non Formal</th>
+                    <th>CV</th>
+                    <th>Instagram</th>
+                    <th>LinkedIn</th>
+                    <th>Tanggal Ujian</th>
+                    <th>Alamat Pengiriman Sertifikat</th>
+                    <th>No. Sertifikat DMS</th>
+                    <th>No. Sertifikat BNSP</th>
+                    <th>Tanggal Terbit BNSP</th>
+                    <th>Tanggal Akhir Berlaku BNSP</th>
+                    <th>Testimoni Meet Up</th>
+                    <th>Banner Testimoni</th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <% for (let alumni of alumnis) {%>
+                      <tr>
+                        <td><%= alumni.name %></td>
+                        <td><%= alumni.gender %></td>
+                        <td><%= alumni.tempatLahir %></td>
+                        <td><%= alumni.tanggalLahir %></td>
+                        <td><%= alumni.phone %></td>
+                        <td><%= alumni.email %></td>
+                        <td><%= alumni.alamat %></td>
+                        <td><%= alumni.alamatPengiriman %></td>
+                        <td><%= alumni.perusahaan %></td>
+                        <td><%= alumni.jobTitle %></td>
+                        <td><%= alumni.pendidikanTerakhir %></td>
+                        <td><%= alumni.jurusan %></td>
+                        <td><%= alumni.universitas %></td>
+                        <td><%= alumni.program %></td>
+                        <td><%= alumni.batch %></td>
+                        <td><%= alumni.tanggalGabung %></td>
+                        <td><%= alumni.tanggalProgram %></td>
+                        <td><%= alumni.fotoFormal %></td>
+                        <td><%= alumni.fotoNonFormal %></td>
+                        <td><%= alumni.cv %></td>
+                        <td><%= alumni.instagram %></td>
+                        <td><%= alumni.linkedin %></td>
+                        <td><%= alumni.tanggalUjian %></td>
+                        <td><%= alumni.alamatPengirimanSertifikat %></td>
+                        <td><%= alumni.noSertifikatDMS %></td>
+                        <td><%= alumni.noSertifikatBNSP %></td>
+                        <td><%= alumni.tglTerbitBNSP %></td>
+                        <td><%= alumni.tglAkhirBNSP %></td>
+                        <td><%= alumni.testimoni %></td>
+                        <td><%= alumni.bannerTestimoni %></td>
+                        <td><a href="alumni/<%= alumni._id %>">Detail</a></td>
+                    </tr>
+                      <% } %>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th>Nama Lengkap</th>
+                      <th>Gender</th>
+                      <th>Tempat Lahir</th>
+                      <th>Tanggal Lahir</th>
+                      <th>Nomor Handphone</th>
+                      <th>Email</th>
+                      <th>Alamat</th>
+                      <th>Alamat Pengiriman</th>
+                      <th>Perusahaan</th>
+                      <th>Job Title</th>
+                      <th>Tingkat Pendidikan Terakhir</th>
+                      <th>Jurusan Pendidikan</th>
+                      <th>Universitas</th>
+                      <th>Program</th>
+                      <th>Batch Program</th>
+                      <th>Tanggal Gabung</th>
+                      <th>Tanggal Program</th>
+                      <th>Foto Formal</th>
+                      <th>Foto Non Formal</th>
+                      <th>CV</th>
+                      <th>Instagram</th>
+                      <th>LinkedIn</th>
+                      <th>Tanggal Ujian</th>
+                      <th>Alamat Pengiriman Sertifikat</th>
+                      <th>No. Sertifikat DMS</th>
+                      <th>No. Sertifikat BNSP</th>
+                      <th>Tanggal Terbit BNSP</th>
+                      <th>Tanggal Akhir Berlaku BNSP</th>
+                      <th>Testimoni Meet Up</th>
+                      <th>Banner Testimoni</th>
+                      <th></th>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->

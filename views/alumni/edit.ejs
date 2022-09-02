@@ -1,0 +1,51 @@
+<% layout('layouts/boilerplate') %>
+<h2>Edit</h2>
+<form action="/alumni/<%= alumni._id%>?_method=PUT" method="post">
+  <div>
+    <label for="fName">Nama Depan</label>
+    <input
+      type="text"
+      id="fName"
+      name="alumni[fName]"
+      value="<%= alumni.fName %>"
+    />
+  </div>
+  <div>
+    <label for="lName">Nama Belakang</label>
+    <input
+      type="text"
+      id="lName"
+      name="alumni[lName]"
+      value="<%= alumni.lName %>"
+    />
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input
+      type="text"
+      id="email"
+      name="alumni[email]"
+      value="<%= alumni.email %>"
+    />
+  </div>
+  <div>
+    <label for="perusahaan">Perusahaan</label>
+    <input
+      type="text"
+      id="perusahaan"
+      name="alumni[perusahaan]"
+      value="<%= alumni.perusahaan %>"
+    />
+  </div>
+  <div>
+    <label for="phone">Nomor Handphone</label>
+    <input
+      type="text"
+      id="phone"
+      name="alumni[phone]"
+      value="<%= alumni.phone %>"
+    />
+  </div>
+  <button>Kirim</button>
+</form>
+<a href="/alumni/<%= alumni._id %>">Kembali</a>
